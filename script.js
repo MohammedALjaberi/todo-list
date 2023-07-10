@@ -25,7 +25,7 @@ inputBox.addEventListener("keypress", function(event){
 
 listContainer.addEventListener("click",function(e){
  if(e.target.tagName === "LI"){
-   e.target.classlist.toggle("checked")
+   e.target.classList.toggle("checked")
     saveData()
  }
 
