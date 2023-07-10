@@ -16,9 +16,16 @@ function addTask(){
     inputBox.value = "";
     saveData() ; 
 }
+inputBox.addEventListener("keypress", function(event){
+    if(event.key === "Enter"){
+        event.preventDefault();
+        addTask();
+    }
+});
+
 listContainer.addEventListener("click",function(e){
  if(e.target.tagName === "LI"){
-    e.target.classlist.toggle("checked");
+   e.target.classlist.toggle("checked")
     saveData()
  }
 
@@ -27,6 +34,7 @@ else if(e.target.tagName === "SPAN"){
     saveData()
 }
 }, false);
+
 
 function saveData() {
     localStorage.setItem("data", listContainer.innerHTML)
